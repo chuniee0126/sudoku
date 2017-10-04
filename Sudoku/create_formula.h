@@ -13,6 +13,6 @@ bool write_CP3(FILE * formula);
 
 bool write_CP4(FILE * formula);
 
-bool write_CP5(FILE * input, FILE * formula);
+bool write_CP5(int * a_input, FILE * formula);
 
 #endif

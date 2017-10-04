@@ -10,7 +10,7 @@
 /**
  * @brief Create formula.txt file
  */
-bool create_formula(FILE * input, FILE * formula);
+bool create_formula(int * a_input, FILE * formula);
 
 /**
  * @brief Run dimacs program with formula.txt
