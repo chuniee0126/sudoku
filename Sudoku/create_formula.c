@@ -103,7 +103,7 @@ bool write_CP5(int * a_input, FILE * formula) {
 			pos_count++;
 		}
 	}
-	for (i = 0; i < pos_count - 1; i++)
+	for (i = 0; i < pos_count - 1; i++) //Output DIMACS format of CP5 to formula.txt
 	{
 		for (j = 1; j <= 9; j++)
 		{
