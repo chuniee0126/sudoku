@@ -12,10 +12,10 @@ int main(int argc, char const *argv[]) {
 	FILE * formula;
 	FILE * output;
 
-	int * a_input = (int *)malloc(sizeof(int) * 81);
+	int * a_input = (int *)malloc(sizeof(int) * 81); // array of input
 	int * a_output = (int *)malloc(sizeof(int) * 81); // array of output
 
-
+	// read_input data
 	input = fopen("input.txt", "r");
 
 	// input 파일 존재 여부 체크
@@ -24,13 +24,9 @@ int main(int argc, char const *argv[]) {
 		return -1;
 	}
 
-	// //input 파일 validation 검사
-	// while((temp = fgetc(input)) != EOF) {
-	// 	if(temp == '\n') count++;
-	// }
-	// printf("%d\n", count);
+	// input file validation check(expected)
 
-
+	// create_array of input matrix
 	for(int i = 0; i < 9; i++) {
 		for(int j = 0; j < 9; j++){
 			temp = fgetc(input);
@@ -42,6 +38,7 @@ int main(int argc, char const *argv[]) {
 		fgetc(input);
 	}
 
+	// print input matrix
 	for(int i = 0; i < 9; i++){
 		for(int j = 0; j < 9; j++){
 			if(a_input[i*9 + j] == '*')
@@ -52,18 +49,29 @@ int main(int argc, char const *argv[]) {
 		printf("\n");
 	}
 
+	printf("\n");
+
+	fclose(input);
+	// ~read_input data
+
+	// create_formula
 	formula = fopen("formula.txt", "w"); // 기존에 파일이 있어도 처음부터 작성
-	output = fopen("output.txt", "w"); // 기존에 파일이 있어도 처음부터 작성
 
 	create_formula(a_input, formula);
+
+	fclose(formula);
+	// ~create_formula
+
+	// run_dimacs and create_output
+	output = fopen("output.txt", "w"); // 기존에 파일이 있어도 처음부터 작성
 
 	run_dimacs(formula, a_output);
 
 	create_output(output, a_output);
 
-	fclose(input);
-	fclose(formula);
 	fclose(output);
+	// ~run_dimacs and create_output
+
 	free(a_output);
 	free(a_input);
 
