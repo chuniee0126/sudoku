@@ -61,5 +61,14 @@ bool run_dimacs(FILE * formula, int * a_output) {
 }
 
 bool create_output(FILE * output, int * result){
+
+	int i;
+	for (i = 0; i < 81; i++)
+	{
+		fprintf(output, "%d ", result[i]); //Printing the output sudoku to output.txt
+		if ((i + 1) % 9 == 0)
+			fprintf(output, "\n");
+	}
+
 	true;
 }
