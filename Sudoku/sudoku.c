@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 #include "create_formula.h"
 #include "sudoku.h"
@@ -40,6 +41,12 @@ bool run_dimacs(FILE * formula, int * a_output) {
 
 	fscanf(fp, "%s", sat); //receives the first line of the output: "sat"
 
+	if (!strcmp(sat, "unsat")) //If there is no solution
+	{
+		printf("No solution!\n");
+		return -1;
+	}
+
 	for (i = 0; i < 81; i++)
 	{
 		for (j = 0; j < 9; j++)
@@ -66,8 +73,12 @@ bool create_output(FILE * output, int * result){
 	for (i = 0; i < 81; i++)
 	{
 		fprintf(output, "%d ", result[i]); //Printing the output sudoku to output.txt
+		printf("%d ", result[i]); //Printing the output sudoku to standard output
 		if ((i + 1) % 9 == 0)
+		{
 			fprintf(output, "\n");
+			printf("\n");
+		}
 	}
 
 	true;
