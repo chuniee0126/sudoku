@@ -18,3 +18,6 @@ $ gcc -g -o Sudoku main.c Sudoku/sudoku.c Sudoku/create_formula.c
 $ Sudoku.exe (open output file)
 $ gdb Sudoku.exe (debugging system)
 ```
+
+### We need to add some introduction of this Programming Assignment repository
+### we need to do refactoring (throw and catch or error detector, etc.)
