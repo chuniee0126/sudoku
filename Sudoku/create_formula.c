@@ -19,7 +19,7 @@ bool write_firstline(int * a_input, FILE * formula){
 		}
 	}
 
-	//      non_zero value + CP1 + CP2 + CP3 + CP4
+	// number of non_zero value + CP1 + CP2 + CP3 + CP4
 	numClause = numNonzero + 2916 + 81 + 81 + 81;
 	// numNonzero와 CP1 계산법이 바뀔 수도 있음(CP1 함수가 달라짐에 따라서)
 
@@ -30,7 +30,15 @@ bool write_firstline(int * a_input, FILE * formula){
 	return true;
 }
 
-bool write_inputvalue(int * a_input, FILE * formula){
+bool write_inputvalue(int * a_input, FILE * formula) {
+	for (int i = 0; i < 81; i++)
+	{
+		if (a_input[i] != 0 && a_input[i] != '*')
+		{
+			fprintf(formula, "%d 0\n", 9*i + a_input[i]);
+		}
+	}
+
 	return true;
 }
 
@@ -58,11 +66,35 @@ bool write_CP1(FILE * formula){
 	return true;
 }
 
-bool write_CP2(FILE * formula){
+bool write_CP2(FILE * formula) {
+	int i, j, n;
+	for (i = 1; i <= 9; i++)
+	{
+		for (n = 1; n <= 9; n++)
+		{
+			for (j = 1; j <= 9; j++)
+			{
+				fprintf(formula, "%d ", 81 * (i - 1) + 9 * (j - 1) + n);
+			}
+			fprintf(formula, "0\n");
+		}
+	}
 	return true;
 }
 
-bool write_CP3(FILE * formula){
+bool write_CP3(FILE * formula) {
+	int i, j, n;
+	for (j = 1; j <= 9; j++)
+	{
+		for (n = 1; n <= 9; n++)
+		{
+			for (i = 1; i <= 9; i++)
+			{
+				fprintf(formula, "%d ", 81 * (i - 1) + 9 * (j - 1) + n);
+			}
+			fprintf(formula, "0\n");
+		}
+	}
 	return true;
 }
 
