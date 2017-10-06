@@ -33,7 +33,7 @@ bool run_dimacs(FILE * formula, int * a_output) {
 	FILE * fp;
 	int i = 0, j = 0, n = 0;
 
-	if ((fp = _popen(cmd, "r")) == NULL) //Runs z3 -dimacs formula.txt
+	if ((fp = popen(cmd, "r")) == NULL) //Runs z3 -dimacs formula.txt
 	{
 		printf("Error with pipe.\n");
 		return -1;
