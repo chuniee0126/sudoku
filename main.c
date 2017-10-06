@@ -8,7 +8,8 @@
 int main(int argc, char const *argv[]) {
 
 	FILE * input;
-	char temp;
+	//char temp;
+	int temp;
 	FILE * formula;
 	FILE * output;
 
@@ -26,7 +27,20 @@ int main(int argc, char const *argv[]) {
 
 	// input file validation check(expected)
 
+	// // create_array of input matrix
+	// for(int i = 0; i < 9; i++) {
+	// 	for(int j = 0; j < 9; j++){
+	// 		temp = fgetc(input);
+	// 		if(temp == '*')
+	// 			a_input[i*9 + j] = '*';
+	// 		else
+	// 			a_input[i*9 + j] = temp - 48;
+	// 	}
+	// 	fgetc(input);
+	// }
+
 	// create_array of input matrix
+	// for input.txt that have space_bar between each cell
 	for(int i = 0; i < 9; i++) {
 		for(int j = 0; j < 9; j++){
 			temp = fgetc(input);
@@ -34,8 +48,8 @@ int main(int argc, char const *argv[]) {
 				a_input[i*9 + j] = '*';
 			else
 				a_input[i*9 + j] = temp - 48;
+			fgetc(input); // reason why space_bar and Enter
 		}
-		fgetc(input);
 	}
 
 	// print input matrix
