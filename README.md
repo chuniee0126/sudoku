@@ -7,14 +7,14 @@ $ gdb Sudoku (debugging system)
 
 # If you cannot use makefile (In LINUX)
 ```
-$ gcc -g -o Sudoku.out main.c Sudoku/sudoku.c Sudoku/create_formula.c
+$ gcc -g -o Sudoku.out -std=gnu99 main.c Sudoku/sudoku.c Sudoku/create_formula.c
 $ ./Sudoku.out (open output file)
 $ gdb Sudoku (debugging system)
 ```
 
 # IN WINDOW
 ```
-$ gcc -g -o Sudoku.out main.c Sudoku/sudoku.c Sudoku/create_formula.c
+$ gcc -g -o Sudoku.out -std=gnu99 main.c Sudoku/sudoku.c Sudoku/create_formula.c
 $ Sudoku.out (open output file)
 $ gdb Sudoku.out (debugging system)
 ```
