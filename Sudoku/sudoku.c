@@ -58,9 +58,9 @@ bool run_dimacs(FILE * formula, int * a_output) {
 				a_output[i] = n; //Interpreted result from the DIMACS output
 			}
 		}
-		printf("%d ", a_output[i]); //Printing the output sudoku to standard output
+		/*printf("%d ", a_output[i]); //Printing the output sudoku to standard output
 		if ((i + 1) % 9 == 0)
-			printf("\n");
+			printf("\n");*/
 	}
 
 	return 0;
