@@ -7,9 +7,9 @@
 #include "Sudoku/sudoku.h"
 
 int main(int argc, char const *argv[]) {
-    FILE *input;
-    FILE *formula;
-    FILE *output;
+    FILE *input = NULL;
+    FILE *formula = NULL;
+    FILE *output = NULL;
 
     int *a_input  = (int *)malloc(sizeof(int) * 81);    // array of input
     int *a_output = (int *)malloc(sizeof(int) * 81);  // array of output
