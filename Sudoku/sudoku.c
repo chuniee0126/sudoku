@@ -91,7 +91,7 @@ bool run_dimacs(FILE *formula, int *a_output) {
     }
 
 	if (strcmp(sat, "sat") && strcmp(sat, "unsat")){ //If the SAT solver(z3/minisat) is not there
-		printf("Abort! SAT solver does not exist in the system.");
+		printf("Abort! SAT solver does not exist in the system.\n");
 		exit(0);
 	}
 
