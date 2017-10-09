@@ -1,7 +1,7 @@
 /**
  * @file sudoku.h
- * @brief
- * @author Chunmyong Park, "", ""
+ * @brief Structure of set of function for solvin Sudoku follows instructer's requirement
+ * @author Jeonghwan Kim, Chunmyong Park, Ho Yoon Choi
  * @date October 4, 2017
  */
 #ifndef SUDOKU_H

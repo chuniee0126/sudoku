@@ -29,7 +29,7 @@ bool read_input(const char *str_input, int *a_input, FILE *input) {
                 if (temp == '*') a_input[i * 9 + j] = '*';
                 else a_input[i * 9 + j] = temp - 48;
             }
-            fgetc(input); // reason why space_bar and Enter
+            fgetc(input);  // reason why space_bar and Enter
         }
     }
     // ~create_array of input matrix
@@ -82,7 +82,6 @@ bool run_dimacs(FILE *formula, int *a_output) {
     }
 
 
-
     fscanf(fp, "%s", sat);  // receives the first line of the output: "sat"
 
     if (!strcmp(sat, "unsat")) {  // If there is no solution
@@ -90,18 +89,18 @@ bool run_dimacs(FILE *formula, int *a_output) {
         exit(0);
     }
 
-	if (strcmp(sat, "sat") && strcmp(sat, "unsat")){ //If the SAT solver(z3/minisat) is not there
-		printf("Abort! SAT solver does not exist in the system.\n");
-		exit(0);
-	}
+    if (strcmp(sat, "sat") && strcmp(sat, "unsat")) {    // If the SAT solver(z3/minisat) is not there
+        printf("Abort! SAT solver does not exist in the system.\n");
+        exit(0);
+    }
 
     for (int i = 0; i < 81; i++) {
         for (int j = 0; j < 9; j++) {
             fscanf(fp, "%d", &solution[j]);
 
-            if (solution[j] > 0) { // If the propositional variable = true
+            if (solution[j] > 0) {  // If the propositional variable = true
                 n           = solution[j] - (i * 9);       // Modification of P(N) = arr_idx*9 + n
-                a_output[i] = n;   // Interpreted result from the DIMACS output
+                a_output[i] = n;  // Interpreted result from the DIMACS output
             }
         }
 
