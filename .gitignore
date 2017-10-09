@@ -1,5 +1,7 @@
 *.o
 *.gch
 *.exe
-*.txt
+formula.txt
+output.txt
+Sudoku.out
 test.c
