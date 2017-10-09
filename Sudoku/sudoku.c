@@ -81,12 +81,19 @@ bool run_dimacs(FILE *formula, int *a_output) {
         exit(0);
     }
 
+
+
     fscanf(fp, "%s", sat);  // receives the first line of the output: "sat"
 
     if (!strcmp(sat, "unsat")) {  // If there is no solution
         printf("No solution! system message : \"unsat\"\n");
         exit(0);
     }
+
+	if (strcmp(sat, "sat") && strcmp(sat, "unsat")){ //If the SAT solver(z3/minisat) is not there
+		printf("Abort! SAT solver does not exist in the system.");
+		exit(0);
+	}
 
     for (int i = 0; i < 81; i++) {
         for (int j = 0; j < 9; j++) {
