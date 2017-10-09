@@ -8,7 +8,7 @@
 #define CREATE_FORMULA_H
 
 /**
- * @brief Write formula file for
+ * @brief Write formula.txt file (all function related with this task)
  */
 bool write_firstline(int *a_input, FILE *formula);
 
