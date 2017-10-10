@@ -29,7 +29,24 @@ bool read_input(const char *str_input, int *a_input, FILE *input) {
                 if (temp == '*') a_input[i * 9 + j] = '*';
                 else a_input[i * 9 + j] = temp - 48;
             }
-            fgetc(input);  // reason why space_bar and Enter
+
+            // reason why space_bar
+            if (j != 8) {
+                if (fgetc(input) != ' '){
+                    printf("Abort! There is unexpected character!\n");
+                    exit(0);
+                }
+            }
+        }
+        for(int i = 1; true;){
+            if (fgetc(input) == '\n'){
+                break;
+            }
+            else if(i > 4){
+                printf("Abort! There is unexpected character!\n");
+                exit(0);
+            }
+            i++;
         }
     }
     // ~create_array of input matrix
@@ -70,7 +87,7 @@ bool create_formula(int *a_input, FILE *formula) {
 }
 
 bool run_dimacs(FILE *formula, int *a_output) {
-    char *cmd = "z3 -dimacs formula.txt";
+    char cmd[] = "z3 -dimacs formula.txt";
     char  sat[5];    // receives the first line of the output: "sat"
     int  *solution = (int *)malloc(sizeof(int) * 729);    // Receives z3 output
     FILE *fp;
@@ -89,7 +106,7 @@ bool run_dimacs(FILE *formula, int *a_output) {
         exit(0);
     }
 
-    if (strcmp(sat, "sat") && strcmp(sat, "unsat")) {    // If the SAT solver(z3/minisat) is not there
+    if (strcmp(sat, "sat") && strcmp(sat, "unsat")) {  // If the SAT solver(z3/minisat) is not there
         printf("Abort! SAT solver does not exist in the system.\n");
         exit(0);
     }
