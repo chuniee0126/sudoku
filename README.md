@@ -10,7 +10,7 @@ Sudoku.out은 9 by 9 Sudoku 매트릭스를 푸는 프로그램(Prover)으로, (
 | ----------- | 
  [![win64-badge](https://cz3.visualstudio.com/_apis/public/build/definitions/bf14bcc7-ebd4-4240-812c-5972fa59e0ad/7/badge)](https://cz3.visualstudio.com/Z3/_build/index?definitionId=7) | 
 
-## Building Sudoku Solver on Windows using git bas
+## Building Sudoku Solver on Windows using git bash
 
 __사전 준비 사항__ : 
 ```
@@ -30,7 +30,9 @@ or
 $ gcc -g -o Sudoku.out -std=gnu99 main.c Sudoku/sudoku.c Sudoku/create_formula.c
 ```
 
-Then:
+---------------------------------------
+
+Excute Sudoku Solver:
 ```
 $ ./Sudoku.out
 ```
