@@ -1,8 +1,8 @@
-# Sudoku Solver
+﻿# Sudoku Solver
 
 Sudoku.out is a 9 by 9 Sudoku matrix solving program that was developed by JeongHwan Kim(21400181), ChunMyung Park(21400337), HoYoon Choi(21600744)
 
-Programming assignment #1 for Discrete Mathematics class, Handon University.
+Programming assignment #1 for Discrete Mathematics class, Handong University.
 
 ## Build status
 
