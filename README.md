@@ -1,8 +1,8 @@
 # Sudoku Solver
 
-Sudoku.out은 9 by 9 Sudoku 매트릭스를 푸는 프로그램(Prover)으로, (from)김정환(21400181), 박천명(21400337), 김호윤(21600744)에 의해 개발되었습니다.
+Sudoku.out is a 9 by 9 Sudoku matrix solving program that was developed by JeongHwan Kim(21400181), ChunMyung Park(21400337), HoYoon Choi(21600744)
 
-이는 한동대학교 이산수학 수업의 과제물입니다.
+Programming assignment #1 for Discrete Mathematics class, Handon University.
 
 ## Build status
 
@@ -12,10 +12,10 @@ Sudoku.out은 9 by 9 Sudoku 매트릭스를 푸는 프로그램(Prover)으로, (
 
 ## Building Sudoku Solver on Windows using git bash
 
-__사전 준비 사항__ : 
+__Preparations to be made in advance__ : 
 ```
-Z3 프로그램 윈도우 환경변수 설정
-Input.txt 파일 준비
+Set up Z3 program in the Windows environment variable
+Prepare input.txt file
 ```
 
 64-bit builds, start with ‘git bash’ (if you can use makefile):
@@ -39,7 +39,7 @@ $ ./Sudoku.out
 
 or 
 
-you have input file that name is not “input.txt” (하지만 파일 확장자는 .txt 여야 한다):
+you have input file that name is not “input.txt” (The File Extension must be ".txt"):
 ```
 $ ./Sudoku.out <input file name>
 ```
